@@ -8,6 +8,6 @@ public class TestController {
 	@RequestMapping("/test")
 	public String TestSpringBoot()
 	{
-		return "acdcxddsad";
+		return "LET DO SOMETHING INTERSTING!";
 	}
 }
