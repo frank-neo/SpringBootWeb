@@ -1,0 +1,55 @@
+#服务端设置
+server:
+  port: 8080
+  address: 192.168.1.112
+  session:
+    timeout: 30
+  tomcat:
+    max-threads: 0
+    uri-encoding: UTF-8
+  context-path: /SpringbootWeb/demo
+  
+#HTTP编码设置
+spring:
+  http: 
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+#数据库设置（如何解决MySQL在高版本需要指明是否进行SSL连接问题：useSSL=true）      
+  datasource:
+    url: jdbc:mysql://localhost:3306/forspring?characterEncoding=utf8&useSSL=true
+    username: root
+    password: lsx8399LSX
+    driver-class-name: com.mysql.jdbc.Driver
+    
+  jpa:
+    properties: 
+      hibernate:
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+        
+#日志设置     
+logging:
+  # 日志文件,绝对路径或相对路径（可以设置文件名称）
+  file: E:\Users\83990\eclipse-workspace\SpringbootWeb\SpringbootWeb\src\main\webapp\logfiles\log.log
+  # 保存日志文件目录路径（文件名称：spring.log）
+  #path: E:\Users\83990\eclipse-workspace\SpringbootWeb\SpringbootWeb\src\main\webapp\logfiles
+  level:
+    com: 
+      favorites: DEBUG
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
+
+#mybatis设置
+mybatis:
+  type-aliases-package: FrankLee.SpringbootWeb.entity
+
+      
+      
+
+    

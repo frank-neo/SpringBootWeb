@@ -1,4 +1,4 @@
-package FrankLee.SpringbootWeb.filtertest;
+package franlee.springbootweb.filtertest;
 
 import java.io.IOException;
 
