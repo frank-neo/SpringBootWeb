@@ -1,7 +1,8 @@
 #服务端设置
 server:
   port: 8080
-  address: 192.168.1.112
+  #ip,域名都设置在address
+  address: localhost
   session:
     timeout: 30
   tomcat:
@@ -18,8 +19,8 @@ spring:
       force: true
 #数据库设置（如何解决MySQL在高版本需要指明是否进行SSL连接问题：useSSL=true）      
   datasource:
-    url: jdbc:mysql://localhost:3306/forspring?characterEncoding=utf8&useSSL=true
-    username: root
+    url: jdbc:mysql://192.168.1.112:3306/forspring?characterEncoding=utf8&useSSL=true
+    username: lishaoxiong
     password: lsx8399LSX
     driver-class-name: com.mysql.jdbc.Driver
     
@@ -30,6 +31,17 @@ spring:
           auto: update
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+    
+  #定位模板的目录
+  mvc:
+    view:
+      prefix: classpath:/templates/
+  #返回页面的后缀
+      suffix: .html
+  #spring boot thymeleaf 标签未关闭报错(若闭合性配置)
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
         
 #日志设置     
 logging:
@@ -45,11 +57,9 @@ logging:
         web: INFO
       hibernate: ERROR
 
-#mybatis设置
+#mybatis实体包设置
 mybatis:
   type-aliases-package: FrankLee.SpringbootWeb.entity
-
-      
-      
+ 
 
     
