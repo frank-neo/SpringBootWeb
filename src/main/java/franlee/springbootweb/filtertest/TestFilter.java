@@ -19,7 +19,7 @@ import org.springframework.core.annotation.Order;
  */
 
 @Order(1)
-@WebFilter(filterName = "TestFilter",urlPatterns="/TestHtml")
+@WebFilter(filterName = "TestFilter",urlPatterns="/login")
 public class TestFilter implements Filter{
 
 	@Override

@@ -39,5 +39,17 @@ public class TestController {
 
 		return testForSpringService.getAll();
 	}
+	
+	 @RequestMapping(value = "/logincheck", method = RequestMethod.POST)
+	 public String loginCheck(String username, String password) {
+	
+	 if (username.equals("lishaoxiong") && password.equals("123456")) {
+	 return "your count is ok!";
+	
+	 } else {
+	 return "bad login...";
+	 }
+	
+	 }
 		
 }
