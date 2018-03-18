@@ -19,7 +19,7 @@ import org.springframework.core.annotation.Order;
  */
 
 @Order(1)
-@WebFilter(filterName = "TestFilter",urlPatterns="/*")
+@WebFilter(filterName = "TestFilter",urlPatterns="/TestHtml")
 public class TestFilter implements Filter{
 
 	@Override
@@ -33,7 +33,7 @@ public class TestFilter implements Filter{
 			throws IOException, ServletException
 	{
 		// 我们执行打印（这是一个filter！）
-		System.out.println("这是一个filter！");
+		System.out.println("登陆页被访问。");
 		//执行它(chain,request,response都是方法中的形参)
 		chain.doFilter(request, response);
 		
